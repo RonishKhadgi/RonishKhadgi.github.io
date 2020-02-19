@@ -128,7 +128,7 @@ html, body {
   
   aside a {
     display: block;
-    float: left;
+    flex-direction: left;
     width: 50%;
   }
   

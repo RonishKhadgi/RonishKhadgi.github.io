@@ -124,16 +124,19 @@ html, body {
     flex: 1;
     margin-left: 10px;
     padding: 1%;
+    flex-wrap: wrap ;
+    flex-direction: row;
+    display: flex;
   }
   
   aside a {
-    display: block;
-    flex-direction: left;
     width: 50%;
+    flex: 50%;
   }
   
   aside img {
     max-width: 100%;
+    
   }
   
   footer {

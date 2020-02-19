@@ -59,7 +59,7 @@ html, body {
   }
   
   body > * {
-    background-color: blue;
+    background-color: lightblue;
     padding: 1%;
   }
   

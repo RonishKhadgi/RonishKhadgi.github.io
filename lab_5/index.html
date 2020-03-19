@@ -260,31 +260,15 @@
            { name: "Zambia", code: "ZM" },
            { name: "Zimbabwe", code: "ZW" }
          ];
-         
-         
-         //console.log("List of countries in the world", countries);
-         
-         const content = document.querySelector(".content");
-         content.innerHTML = "";
-         
-         const entry = `<strong>${name}</strong>`;
-         
-         const sample = {name: "bali", code: 'ba'};
-         
-         
-         for (let i = 0; i < countries.length; i++) {
-          // console.log(countries[i]); // log out by index
-          // console.log(`${countries[i].name} ${countries[i].code}`);
-         }
-         
-         
+            
+      
          const range = n => {
            var arr = [];
            for (let i = 0; i < n;) {
              let num = getRandomInt(countries.length);
              if(!arr.includes(num)){
-               i++;
                arr[i] = num;
+               i++;
              }
            }
            return arr;
@@ -302,7 +286,6 @@
          
          function clickFunction() {
            cList = range(25);
-           //var points = [40, 100, 1, 5, 25, 10];
            cList.sort(function(a, b){return a - b});
 
          var countryList = "<ol>";

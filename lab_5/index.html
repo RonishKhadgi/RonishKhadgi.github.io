@@ -8,7 +8,7 @@
       <div class="container">
          <div class="wrapper">
             <div class="header">Ronish's List of Countries</div>
-            <button id="displayList" onclick= "clickFunction()" class="activate">Click me to relace list entries</button>
+            <button id="displayList" onclick= "clickFunction()" class="activate">Click me to replace list entries</button>
             <div id='displayListId'class="content"></div>
             <div class="footer"></div>
          </div>
@@ -302,7 +302,7 @@
          
          function clickFunction() {
            cList = range(25);
-           var points = [40, 100, 1, 5, 25, 10];
+           //var points = [40, 100, 1, 5, 25, 10];
            cList.sort(function(a, b){return a - b});
 
          var countryList = "<ol>";

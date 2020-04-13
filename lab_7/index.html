@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Maps Lab</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Frontend Libraries: Maps Lab</div>
+        <div class="content">
+          <div id="myMap"></div>
+        </div>
+        <div class="footer">Make some markers work!</div>
+      </div>
+    </div>
+    <script>
+        const myMap = L.map('myMap').setView([38.9881, -76.9416], 13);
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1Ijoicm9uaXNoMTEiLCJhIjoiY2s4eHVldzV2MWI4ajNpcHI4c2ZkOW51NCJ9.rjCLY1qH5rx6kFPzqARZFg'
+}).addTo(myMap);
+const marker = L.marker([38.9881, -76.9416]).addTo(myMap);
+const stringOne = "Hornbake Library";
+marker.bindPopup(stringOne).openPopup();
+
+const markerTwo = L.marker([38.870336, -76.848331]).addTo(myMap);
+const stringTwo = "Subway";
+markerTwo.bindPopup(stringTwo).openPopup();
+
+const markerThree = L.marker([38.901794, -76.90064]).addTo(myMap);
+const stringThree = "McDonalds";
+markerThree.bindPopup(stringThree).openPopup();
+
+const markerFour = L.marker([38.954462, -76.812885]).addTo(myMap);
+const stringFour = "Vocelli Pizza";
+markerFour.bindPopup(stringFour).openPopup();
+
+let markerArray=[marker,markerTwo,markerThree,markerFour];
+
+    </script>
+  </body>
+</html>

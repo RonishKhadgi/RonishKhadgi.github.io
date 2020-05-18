@@ -51,8 +51,6 @@
           .then((data) => data.text()) // note: we didn't send JSON, so there's no JSON to get.
           .then((txtresponse) => {
             document.getElementById("demo").innerHTML = "Yes Success";
-            console.log(res);
-            console.log(txtresponse);
             btn.setAttribute("disabled", true);
             const br = document.createElement("br");
             target.append(br);

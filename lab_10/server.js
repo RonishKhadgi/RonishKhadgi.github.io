@@ -3,11 +3,11 @@
 import express from "express";
 import fetch from "node-fetch";
 
-// const sqlite3 = require('sqlite3').verbose(); // We're including a server-side version of SQLite, the in-memory SQL server.
-// const open = require(sqlite).open; // We're including a server-side version of SQLite, the in-memory SQL server.
+const sqlite3 = require('sqlite3').verbose(); // We're including a server-side version of SQLite, the in-memory SQL server.
+const open = require(sqlite).open; // We're including a server-side version of SQLite, the in-memory SQL server.
 
-import sqlite3 from "sqlite3";
-import { open } from "sqlite";
+//import sqlite3 from "sqlite3";
+//import { open } from "sqlite";
 import writeUser from "./libraries/writeuser";
 
 const dbSettings = {
@@ -77,8 +77,9 @@ app
       console.log(req.body);
       res.status("418").send("something went wrong, additionally i am a teapot");
     } else {
-      writeUser(req.body.name, dbSettings)
+      writeUser(req.body.name, req.body.zip, req.body.interest, dbSettings)
       .then((result) => {
+        console.log("resulsFromPut")
         console.log(result);
         res.send("your request was successful"); // simple mode
       })

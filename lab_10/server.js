@@ -3,12 +3,13 @@
 import express from "express";
 import fetch from "node-fetch";
 
-const sqlite3 = require('sqlite3').verbose(); // We're including a server-side version of SQLite, the in-memory SQL server.
-const open = require(sqlite).open; // We're including a server-side version of SQLite, the in-memory SQL server.
-
 //import sqlite3 from "sqlite3";
-//import { open } from "sqlite";
+import { open } from "sqlite";
 import writeUser from "./libraries/writeuser";
+
+const sqlite3 = require('sqlite3').verbose(); // We're including a server-side version of SQLite, the in-memory SQL server.
+const openTwo = require(sqlite).open; // We're including a server-side version of SQLite, the in-memory SQL server.
+
 
 const dbSettings = {
   filename: "./tmp/database.db",
@@ -48,7 +49,7 @@ app
   .get((req, res) => {
     // processDataForFrontEnd(req, res)
     (async () => {
-      const db = await open(dbSettings);
+      const db = await openTwo(dbSettings);
       const result = await db.all("SELECT * FROM user");
       console.log("Expected result", result);
       res.json(result);
